@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+{% block head %}
+    <title>Главная</title>
+{% endblock %}
+
+       {% block featured_main %}
+            <div class="featured-main">
+                {% for product in products %}
+                <h1>{{ product.name }}</h1>
+                {% endfor %}
+        {% endblock %}
+

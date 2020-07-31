@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'fonts/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet">
+    <!--load all styles -->
+    <title>Geekbrains HW-07</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/style_basket.css' %}">#}
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-header menu-container clearfix padding-site">
+            <a href=""><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
+            {% block menu %}
+                {% include 'firstapp/includes/inc__main_menu.html' %}
+            {% endblock %}
+
+            </ul>
+            <p class="contact">Our Products Range</p>
+        </div>
+        <div class="catalog-img-table">
+            <div class="product-header clearfix padding-site">
+            {% include 'firstapp/includes/inc__category_menu.html' %}
+            </div>
+            <div class="blocks padding-site clearfix">
+                <div class="block-img1">
+                    <div class="block"><img src="{% static 'img/interior1.jpg' %}" alt="product-1"></div>
+                    <div class="block"><img src="{% static 'img/interior2.jpg' %}" alt="product-2"></div>
+                    <div class="block"><img src="{% static 'img/interior3.jpg' %}" alt="product-3"></div>
+                </div>
+                <div class="block-img2">
+                    <div class="block2"><img src="{% static 'img/interior4.jpg' %}" alt="product-4"></div>
+                    <div class="block2"><img src="{% static 'img/interior5.jpg' %}" alt="product-5"></div>
+                    <div class="block2"><img src="{% static 'img/interior6.jpg' %}" alt="product-6"></div>
+                </div>
+                <div class="block-img3">
+                    <div class="block3"><img src="{% static 'img/interior7.jpg' %}" alt="product-7"></div>
+                    <div class="block3"><img src="{% static 'img/interior8.jpg' %}" alt="product-8"></div>
+                    <div class="block3"><img src="{% static 'img/interior9.jpg' %}" alt="product-9"></div>
+                </div>
+                <div class="block-img4">
+                    <div class="block4"><img src="{% static 'img/interior10.jpg' %}" alt="product-10"></div>
+                    <div class="block4"><img src="{% static 'img/interior11.jpg' %}" alt="product-11"></div>
+                    <div class="block4"><img src="{% static 'img/interior12.jpg' %}" alt="product-12"></div>
+                </div>
+            </div>
+            <div class="cicles-rows padding-site"><img src="{% static 'img/cicle-arrows.jpg' %}" alt="arrows"></div>
+        </div>
+        <div class="exclusive-block exclusive-block-prod clearfix">
+            <div class="exlusive-prod1">
+                <img src="{% static 'img/promo-img1.jpg' %}" alt="promo1">
+                <div class="exlusive-text">
+                    <p class="exclusive-header">EXCLUSIVE</p>
+                    <h2 class="exlusive-h2">Fishnet Chair</h2>
+                    <p class="exlusive-content">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt</p>
+                    <a href="#" class="button exclusive-button">Order Us ></a>
+                </div>
+
+
+
+            </div>
+            <div class="exlusive-prod2 clearfix">
+                <img src="{% static 'img/promo-img2.jpg' %}" alt="promo2">
+                <div class="exlusive-text">
+                    <p class="exclusive-header">EXCLUSIVE</p>
+                    <h2 class="exlusive-h2">Fishnet Chair</h2>
+                    <p class="exlusive-content">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt</p>
+                    <a href="#" class="button exclusive-button">Order Us ></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer padding-site">
+            <div class="footer-text-columns">
+                <div class="footer-text-col1">
+                    <h2>Contact Us</h2>
+                    <p>132A Bridge Road Richmond VIC
+                        Australia.</p>
+                    <p>
+                        Talk to us on 1300 132
+                        info@interior.com</p>
+                </div>
+                <div class="footer-text-col2">
+                    <h2>Useful Information</h2>
+                    <a id="first-foot-link" href="#">Sales terms</a>
+                    <a href="#">Customer care</a>
+                    <a href="#">Delivery</a>
+                </div>
+                <div class="footer-text-col3">
+                    <a href="#">Architect accounts</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Exchanges &amp; returns</a>
+                </div>
+                <div class="footer-text-col4">
+                    <h2>Let’s Stay in Touch!</h2>
+                    <p>Suscribe to know about our latest news, products and special offers just for suscribers.</p>
+                    <input type="text" class="email" placeholder="your email address">
+                </div>
+            </div>
+            <div class="footer-social">
+                <p>&copy; Copyright - INTERIOR 2016. All Rights Reserved.</p>
+                <div class="social-buttons-link">
+                    <a class="soc-links" href="#"><i class="fab fa-facebook"></i></a> <!-- uses brands style -->
+                    <a class="soc-links" href="#"><i class="fab fa-twitter"></i></a> <!-- uses brands style -->
+                    <a class="soc-links" href="#"><i class="fab fa-google-plus"></i></a> <!-- uses brands style -->
+                    <a class="soc-links" href="#"><i class="fab fa-youtube"></i></a> <!-- uses brands style -->
+                </div>
+                <p id="privat-privasy">Terms &amp; Conditions / Privacy policy &amp; Cookies</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

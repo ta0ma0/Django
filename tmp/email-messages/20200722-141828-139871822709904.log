@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGRqYW5nbzM1?=
+From: django@geekshop.local
+To: ivan@gb2.local
+Date: Wed, 22 Jul 2020 14:18:28 -0000
+Message-ID: <159542750848.27735.18053740295518760511@akrus-N56VJ>
+
+Для подтверждения учетной записи django35 на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/verify/ivan@gb2.local/75c00f5c0cab70e9b046a94598ff280caf258238/
+-------------------------------------------------------------------------------

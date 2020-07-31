@@ -1,0 +1,64 @@
+<ul class="menu clearfix">
+    <li class="menu-list"><a href="{% url 'main:index' %}" class="menu-link menu-link-active">ДОМОЙ</a></li>
+    <li class="menu-list"><a href="{% url 'main:products' %}" class="menu-link">ПРОДУКТЫ</a></li>
+    <li class="menu-list"><a href="{% url 'main:contacts' %}" class="menu-link">КОНТАКТЫ</a></li>
+
+
+    {% if user.is_superuser %}
+        <li class="menu-list">
+            <a href="{% url 'my_admin:index' %}" class="menu-link">
+                админка
+            </a>
+        </li>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <li class="menu-list">
+            <a href="{% url 'auth:logout' %}" class="menu-link">
+                выход
+            </a>
+        </li>
+    {% else %}
+        <li class="menu-list">
+            <a href="{% url 'auth:login' %}" class="menu-link">
+                вход
+            </a>
+        </li>
+    {% endif %}
+
+    <li class="menu-list"><a href="#" class="menu-link"><img src="/static/img/search.svg" alt="search"></a>
+    </li>
+    {% if user.is_authenticated %}
+        <li class="menu-list">
+            <div class="dropdown">
+                <a class="dropbtn" href="" data-toggle="dropdown">
+                    {{ user.first_name|default:'пользователь'|title }}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-content">
+                    <li class="menu-list">
+                        <a href="{% url 'auth:update' %}">
+                            профиль
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="{% url 'orderapp:index' %}">
+                            заказы
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    {% endif %}
+    {% if user.is_authenticated and basket %}
+        <li class="menu-list">
+            <a href="{% url 'basket:index' %}" class="basket menu-link">
+            <span>{{ basket.0.total_cost|floatformat:0 }} руб
+                ({{ basket.0.total_quantity }} шт)</span>
+            </a>
+        </li>
+    {% endif %}
+    <a href="#" class="search"></a>
+
+
+</ul>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="r95316mu.beget.tech" id="7dfd360e-8ba8-42c6-aff5-ade849428eb6" port="22" customName="beget" nameFormat="CUSTOM" username="r95316mu_djgb">
+        <option name="customName" value="beget" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

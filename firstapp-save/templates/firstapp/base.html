@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-{% extends 'firstapp/base.html' %}
-{% load static %}
+{% load staticfiles %}
+<html lang="en">
 
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link href="/static/fonts/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <title>{{ page_title|title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+{% endblock %}
 
 {% block conteiner %}
+{% endblock %}
+<body>
 <div class="container">
     <div class="slider padding-site">
         <div class="header clearfix">
             <a href=""><img src="/static/img/logo.svg" alt="logo"></a>
-       {% include 'firstapp/includes/inc__main_menu.html' %}
-
+            {% block menu %}
+            {% endblock %}
         </div>
         <div class="slider-text">
             <p class="slider-trending">Тенденции</p>
@@ -39,30 +52,8 @@
 
             <a href="#" class="featured-link">Посмотреть всё ></a>
         </div>
-            <div class="featured-main">
-                {% for product in products %}
-                    <div class="featured-prod">
-                        <div class="featured-back">
-                            <div class="featured-background">
-                                <img class="featured-background" src="/static/img/back.png" alt="back">
-                            </div>
-                            <div class="featured-back-circle">
-                                <img src="/static/img/back-circle.jpg" alt="circle" class="circle-back">
-                            </div>
-
-                            <div class="featured-text">
-                                <h2 class="featured-h2">{{ product.name }}</h2>
-                                <p class="featured-content">Seat and back with upholstery made of cold cure foam</p>
-                            </div>
-                        </div>
-
-                        <div class="featured-front">
-                            <img src="{{ product.image.url }}" alt="prod1">
-                        </div>
-                    </div>
-                {% endfor %}
-
-            </div>
+        {% block featured_main %}
+        {% endblock %}
     </div>
     <div class="exclusive-block clearfix">
         <div class="exlusive-prod1">
@@ -145,6 +136,60 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="mobile-app">
+        <img src="/static/img/mobile-back-img.jpg" alt="mobile-back-img">
+        <div class="mobile-text">
+            <p class="mobile-header">мобильное приложение</p>
+            <h2 class="mobile-h2">Находи. Следуй. Наслаждайся</h2>
+            <p class="mobile-content">Сохраните ваши любимые и поделитесь своим стилем
+</p>
+            <div class="mobile-store-link clearfix">
+                <a href="#"><img src="/static/img/app-store.png" alt="app-store"></a><a href="#"><img
+                    src="/static/img/google-play.png" alt="google-play"></a>
+            </div>
+        </div>
+    </div>
+{% block footer %}
+    <div class="footer padding-site">
+        <div class="footer-text-columns">
+            <div class="footer-text-col1">
+                <h2>Свяжитесь с нами</h2>
+                <p>132A Bridge Road Richmond VIC
+                    Australia.</p>
+                <p>
+                    Talk to us on 1300 132
+                    info@interior.com</p>
+            </div>
+            <div class="footer-text-col2">
+                <h2>Полезная информация</h2>
+                <a id="first-foot-link" href="#">Скидки</a>
+                <a href="#">Инфо. для заказчика</a>
+                <a href="#">Доставка</a>
+            </div>
+            <div class="footer-text-col3">
+                <a href="#">Создать аккаунт</a>
+                <a href="#">Карьера</a>
+                <a href="#">Обмен &amp; возврат</a>
+            </div>
+            <div class="footer-text-col4">
+                <h2>Давайте оставаться на связи!</h2>
+                <p>Подпишитесь, чтобы узнать о наших последних новостях, продуктах и специальных предложениях только для подписчиков.</p>
+                <input type="text" class="email" placeholder="your email address">
+            </div>
+        </div>
+        <div class="footer-social">
+            <p>&copy; Copyright - INTERIOR {% now "  Y" %}. All Rights Reserved.</p>
+            <div class="social-buttons-link">
+                <a class="soc-links" href="#"><i class="fab fa-facebook"></i></a> <!-- uses brands style -->
+                <a class="soc-links" href="#"><i class="fab fa-twitter"></i></a> <!-- uses brands style -->
+                <a class="soc-links" href="#"><i class="fab fa-google-plus"></i></a> <!-- uses brands style -->
+                <a class="soc-links" href="#"><i class="fab fa-youtube"></i></a> <!-- uses brands style -->
+            </div>
+            <p id="privat-privasy">Услования &amp; Правила / Политика приватности &amp; Cookies</p>
+        </div>
+    </div>
 {%  endblock %}
+</div>
+</body>
 
+</html>

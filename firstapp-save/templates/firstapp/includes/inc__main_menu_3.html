@@ -1,0 +1,15 @@
+<ul class="menu clearfix">
+    <li class="menu-list"><a href="{% url 'main:index' %}" class="menu-link">ДОМОЙ</a></li>
+    <li class="menu-list"><a href="{% url 'main:products' %}" class="menu-link ">ПРОДУКТЫ</a></li>
+    <li class="menu-list"><a href="{% url 'main:contacts' %}" class="menu-link menu-link-active">КОНТАКТЫ</a></li>
+    <li class="menu-list"><a href="#" class="menu-link"><img src="/static/img/search.svg" alt="search"></a>
+    </li>
+            {% if user.is_authenticated and basket %}
+             <li class="menu-list">
+        <a href="{% url 'basket:index' %}" class="basket menu-link">
+            <span>{{ basket.0.total_cost|floatformat:0 }} руб
+                ({{basket.0.total_quantity}} шт)</span>
+        </a>
+             </li>
+    {% endif %}
+</ul>

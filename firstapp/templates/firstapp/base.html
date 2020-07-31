@@ -1,154 +1,28 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
-
+<body>
 {% block head %}
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link href="/static/fonts/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
-    <!--load all styles -->
-    <title>{{ page_title|title }}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link href="/static/fonts/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+        <!--load all styles -->
+        <title>{{ page_title|title }}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+        {% block title %}
+            <title>
+                {{ page_title|title }}
+            </title>
+        {% endblock %}
 {% endblock %}
 
 {% block conteiner %}
 {% endblock %}
-<body>
-<div class="container">
-    <div class="slider padding-site">
-        <div class="header clearfix">
-            <a href=""><img src="/static/img/logo.svg" alt="logo"></a>
-            {% block menu %}
-            {% endblock %}
-        </div>
-        <div class="slider-text">
-            <p class="slider-trending">Тенденции</p>
-            <h2 class="slider-h2">Удобные стулья</h2>
-            <p class="slider-content">Сиденье и спинка с обивкой из пены холодного отверждения. Стальная рама, доступная в
-                 матовое порошковое покрытие черного цвета.</p>
-            <a href="#" class="button">Заказать ></a>
-        </div>
-        <div class="pagination">
 
-            <a href="#" class="circle"></a><a href="#" class="circle circle-active"></a><a href="#" class="circle"></a>
-        </div>
-    </div>
-
-    <div class="featured padding-site">
-        <div class="featured-header clearfix">
-            <ul class="featured-menu clearfix">
-                <li class="featured-list featured-link-active"><a href="#">Особенности</a>
-                    <hr>
-                </li>
-                <li class="featured-list"><a href="#">Новинка</a>
-                    <hr>
-                </li>
-
-            </ul>
-
-
-            <a href="#" class="featured-link">Посмотреть всё ></a>
-        </div>
-        {% block featured_main %}
-        {% endblock %}
-    </div>
-    <div class="exclusive-block clearfix">
-        <div class="exlusive-prod1">
-            <img src="/static/img/promo-img1.jpg" alt="promo1">
-            <div class="exlusive-text">
-                <p class="exclusive-header">Эксклюзив</p>
-                <h2 class="exlusive-h2">Удобный стул</h2>
-                <p class="exlusive-content">Сиденье и спинка с обивкой из пены холодного отверждения. Стальная рама, доступная в
-                 матовое порошковое покрытие черного цвета.</p>
-                <a href="#" class="button exclusive-button">Заказать ></a>
-            </div>
-
-
-        </div>
-        <div class="exlusive-prod2 clearfix">
-            <img src="/static/img/promo-img2.jpg" alt="promo2">
-            <div class="exlusive-text">
-                <p class="exclusive-header">Эксклюзив</p>
-                <h2 class="exlusive-h2">Удобный стул</h2>
-                <p class="exlusive-content">Сиденье и спинка с обивкой из пены холодного отверждения. Стальная рама, доступная в
-                 матовое порошковое покрытие черного цвета.</p>
-                <a href="#" class="button exclusive-button">Заказать ></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="trending-prod clearfix padding-site">
-        <div class="trending-header clearfix">
-            <p class="tranding-menu">Продукты</p>
-            <a href="#" class="trending-link">Посмотреть всё></a>
-        </div>
-
-        <div class="trending-raw-1">
-            <img src="/static/img/trand-product-1.jpg" alt="trand-product-1" class="tranding-img"><img
-                src="/static/img/trand-product-2.jpg" alt="trand-product-2" class="tranding-img"><img
-                src="/static/img/trand-product-3.jpg" alt="trand-product-3" class="tranding-img">
-        </div>
-        <div class="trending-raw-2">
-            <img src="/static/img/trand-product-4.jpg" alt="trand-product-4" class="tranding-img"><img
-                src="/static/img/trand-product-5.jpg" alt="trand-product-5" class="tranding-img"><img
-                src="/static/img/trand-product-6.jpg" alt="trand-product-6" class="tranding-img">
-        </div>
-    </div>
-    <div class="hotdeal-block clearfix">
-        <img src="/static/img/exclusive.jpg" alt="promo1">
-        <div class="hotdeal-text">
-            <p class="hotdeal-header">Горячее предложение</p>
-            <h2 class="hotdeal-h2">Удобный стул</h2>
-            <p class="hotdeal-content">Сиденье и спинка с обивкой из пены холодного отверждения. Стальная рама, доступная в
-                 матовое порошковое покрытие черного цвета.</p>
-            <a href="#" class="button exclusive-button">Заказать ></a>
-        </div>
-        <div class="pagination2">
-            <a href="#" class="circle"></a><a href="#" class="circle circle-active"></a><a href="#" class="circle"></a>
-        </div>
-    </div>
-
-    <div class="exclusive-2-block-container padding-site">
-        <div class="exclusive-2-block">
-            <div class="exclusive-2-left">
-                <img src="/static/img/exclusive-2-left.jpg" alt="exclusive-2-left">
-                <div class="exclusive-2-text">
-                    <p class="exclusive-2-header">Эксклюзив</p>
-                    <h2 class="exclusive-2-h2">Удобный стул</h2>
-                    <p class="exclusive-2-content">Сиденье и спинка с обивкой из пены холодного отверждения. Стальная рама, доступная в
-                 матовое порошковое покрытие черного цвета.</p>
-                    <a href="#" class="button exclusive-2-button">Заказать ></a>
-                </div>
-
-            </div>
-            <div class="exclusive-2-right">
-                <div class="exclusive-raw-1">
-                    <img src="/static/img/exclusive-2-right1.jpg" alt="exclusive-2-right1" class="exclusive-img"><img
-                        src="/static/img/exclusive-2-right2.jpg" alt="exclusive-2-right2" class="exclusive-img">
-                </div>
-                <div class="exclusive-raw-2">
-                    <img src="/static/img/exclusive-2-right3.jpg" alt="exclusive-2-right3" class="exclusive-img"><img
-                        src="/static/img/exclusive-2-right4.jpg" alt="exclusive-2-right4" class="exclusive-img">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mobile-app">
-        <img src="/static/img/mobile-back-img.jpg" alt="mobile-back-img">
-        <div class="mobile-text">
-            <p class="mobile-header">мобильное приложение</p>
-            <h2 class="mobile-h2">Находи. Следуй. Наслаждайся</h2>
-            <p class="mobile-content">Сохраните ваши любимые и поделитесь своим стилем
-</p>
-            <div class="mobile-store-link clearfix">
-                <a href="#"><img src="/static/img/app-store.png" alt="app-store"></a><a href="#"><img
-                    src="/static/img/google-play.png" alt="google-play"></a>
-            </div>
-        </div>
-    </div>
+{% block footer %}
     <div class="footer padding-site">
         <div class="footer-text-columns">
             <div class="footer-text-col1">
@@ -172,7 +46,8 @@
             </div>
             <div class="footer-text-col4">
                 <h2>Давайте оставаться на связи!</h2>
-                <p>Подпишитесь, чтобы узнать о наших последних новостях, продуктах и специальных предложениях только для подписчиков.</p>
+                <p>Подпишитесь, чтобы узнать о наших последних новостях, продуктах и специальных предложениях только для
+                    подписчиков.</p>
                 <input type="text" class="email" placeholder="your email address">
             </div>
         </div>
@@ -187,7 +62,7 @@
             <p id="privat-privasy">Услования &amp; Правила / Политика приватности &amp; Cookies</p>
         </div>
     </div>
-</div>
-</body>
+{% endblock %}
 
+</body>
 </html>

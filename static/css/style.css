@@ -55,7 +55,7 @@ body {
   color: #212121;
   font-weight: 700;
   letter-spacing: 1.4px;
-  border-bottom: 3px solid #212121;
+  /*border-bottom: 3px solid #212121;*/
 }
 .slider-trending {
   color: #43a047;
@@ -87,14 +87,12 @@ body {
   color: #212121;
   font-size: 18px;
   font-weight: 700;
-  line-height: 24px;
   text-transform: uppercase;
   border-radius: 23px;
   background-color: #ffffff;
   width: 212px;
   height: 45px;
   text-align: center;
-  line-height: 45px;
   display: inline-block;
   text-decoration: none;
   letter-spacing: 3.6px;
@@ -102,6 +100,8 @@ body {
 }
 .button:hover {
   background-color: #f4f4f4;
+  text-decoration: none;
+  color: #28a745;;
 }
 .pagination {
   position: absolute;
@@ -184,6 +184,11 @@ body {
   line-height: 24px;
   padding: 30px 13px;
   font-weight: 800;
+}
+
+.featured-link:hover {
+  text-decoration: none;
+  color: #28a745;
 }
 .featured-background {
   position: absolute;
@@ -280,6 +285,11 @@ body {
   line-height: 24px;
   padding-top: 137px;
   font-weight: 800;
+}
+
+.trending-link:hover {
+  text-decoration: none;
+  color: #28a745;
 }
 .tranding-menu {
   float: left;
@@ -842,7 +852,6 @@ b:last-child {
 }
 .button {
   margin-top: 31px;
-  margin-left: 0px;
   text-align: center;
   line-height: 48.02px;
 }
@@ -903,7 +912,7 @@ b:last-child {
   margin-right: -30px;
 }
 .container-interior {
-  backgroud-color: #fff;
+  background-color: #fff;
 }
 
 .login {
@@ -991,3 +1000,15 @@ b:last-child {
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.featured-h2 {
+  font-size: 1.5rem;
+}
+
+body > div.container > div.prod-header.padding-site.menu-container > div > div > ul > li:nth-child(8) {
+    width: 170px;
+}
+
+textarea {
+  padding-left: 25px;
+}

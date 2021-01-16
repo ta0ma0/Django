@@ -6,7 +6,6 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-
 from adminapp.forms import AdminShopUserCreateForm, AdminShopUserUpdateForm, AdminProductCategoryUpdateForm, \
     AdminProductUpdateForm
 from authapp.models import ShopUser
@@ -34,8 +33,6 @@ class ShopUserList(SuperUserOnlyMixin, ListView):
     def get_queryset(self):
         qs = super().get_queryset()
         result = qs.order_by('-is_active', '-is_superuser')
-        # print(id(qs), id(result))
-        # print(getsizeof(qs), getsizeof(result))
         return result
 
 
@@ -116,10 +113,6 @@ class ProductCategoryUpdateView(SuperUserOnlyMixin, PageTitleMixin, UpdateView):
     form_class = AdminProductCategoryUpdateForm
     page_title = 'категории продуктов/редактирование'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['title'] = 'категории продуктов/редактирование'
-    #     return context
 
 
 class ProductCategoryDelete(SuperUserOnlyMixin, DeleteView):

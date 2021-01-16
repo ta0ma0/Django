@@ -1,9 +1,0 @@
-<ul class="prod-range-menu clearfix">
-    <li class="product-list product-link-active"><a href="{% url 'main:category' 0 %}">ВСЁ</a>
-    <li class="product-list"><a href="#">ДОМОЙ</a>
-        {% for category in categories %}
-            <li class="product-list"><a href="{% url 'main:category' category.pk %}"
-                                        class="{% if request.resolver_match.kwargs.pk|add:0 == category.pk %}prod-range-menu-active{% endif %}">{{ category.name }}</a>
-        {% endfor %}
-
-</ul>

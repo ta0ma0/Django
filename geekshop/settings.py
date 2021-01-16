@@ -28,10 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition
-# superuser: django
-# password:  geekbrains
-# 7 min -> 20:09
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -141,8 +137,7 @@ JSON_PATH = 'mainapp/json'
 AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
-# REDIRECT_FIELD_NAME = 'go'  # not works
-# REDIRECT_FIELD_NAME = 'go'
+
 
 
 # email send settings
@@ -154,10 +149,6 @@ EMAIL_HOST_USER = 'django@geekshop.local'
 EMAIL_HOST_PASSWORD = 'geekshop'
 EMAIL_USE_SSL = False
 
-# вариант python -m smtpd -n -c DebuggingServer localhost:25
-# EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
-
-# вариант логирования сообщений почты в виде файлов вместо отправки
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
 

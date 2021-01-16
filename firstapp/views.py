@@ -1,11 +1,9 @@
 from random import random
 
-from django.http import request, JsonResponse
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from firstapp.models import ProductCategory, Product
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
-from basketapp.models import Basket
+from firstapp.models import ProductCategory, Product
 
 
 def get_menu():
@@ -70,6 +68,7 @@ def probe_images(request):
     }
     return render(request, 'firstapp/test_images.html', context)
 
+
 def category(request, pk):
     categories = ProductCategory.objects.all()
 
@@ -85,6 +84,7 @@ def category(request, pk):
         'products': products,
     }
     return render(request, 'firstapp/categories_products.html', context)
+
 
 def product(request, pk):
     context = {

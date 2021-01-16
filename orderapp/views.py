@@ -63,16 +63,11 @@ class OrderCreate(CreateView):
                 orderitems.instance = self.object
                 orderitems.save()
             self.request.user.basket.all().delete()  # qs method call -> one query
-            # for item in self.request.user.basket.all(): -> many queries
-            #     item.delete()  # object method call
 
-        # удаляем пустой заказ
         if self.object.get_total_cost() == 0:
             self.object.delete()
 
         return super().form_valid(form)
-
-    # orderapp/order_form.html
 
 
 class OrderUpdate(UpdateView):
@@ -114,14 +109,11 @@ class OrderUpdate(UpdateView):
 
         return super().form_valid(form)
 
-    # orderapp/order_form.html
-
 
 class OrderDelete(DeleteView):
     model = Order
     success_url = reverse_lazy('orderapp:index')
-    # orderapp/order_confirm_delete.html
-# test git init
+
 
 class OrderRead(DetailView):
     model = Order

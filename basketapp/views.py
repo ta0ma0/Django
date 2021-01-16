@@ -1,12 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
 
 from basketapp.models import Basket
 from firstapp.models import Product
-
 from firstapp.models import ProductCategory
 
 
@@ -70,7 +69,6 @@ def change(request, pk, quantity):
             basket.quantity = quantity
             basket.save()
 
-
         result = render_to_string(
             'basketapp/includes/inc__basket_list.html',
 
@@ -78,5 +76,3 @@ def change(request, pk, quantity):
         )
 
         return JsonResponse({'result': result})
-
-
